@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  # ── Trainer: entrena el modelo y lo deposita en el volumen ──────────────────
+  trainer:
+    build:
+      context: .
+      target: trainer
+    volumes:
+      - model_artifacts:/app/models
+    profiles:
+      - train    # solo se ejecuta con: docker compose --profile train up
+
+  # ── API: sirve predicciones ─────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "8000:8000"
+    volumes:
+      - model_artifacts:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+
+volumes:
+  model_artifacts:
