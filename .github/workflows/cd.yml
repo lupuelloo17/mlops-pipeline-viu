@@ -31,11 +31,10 @@ jobs:
           context: .
           target: runtime
           push: true
+          no-cache: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
       - name: Deploy a EC2
         uses: appleboy/ssh-action@v1.0.3
