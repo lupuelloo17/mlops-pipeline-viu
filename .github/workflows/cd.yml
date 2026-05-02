@@ -38,15 +38,15 @@ jobs:
 
       - name: Decodificar clave SSH
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > /tmp/ec2_key.pem
-          chmod 600 /tmp/ec2_key.pem
+          echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > $GITHUB_WORKSPACE/ec2_key.pem
+          chmod 600 $GITHUB_WORKSPACE/ec2_key.pem
 
       - name: Deploy a EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
-          key_path: /tmp/ec2_key.pem
+          key_path: /github/workspace/ec2_key.pem
           script: |
             docker stop iris-mlops-api 2>/dev/null || true
             docker rm   iris-mlops-api 2>/dev/null || true
