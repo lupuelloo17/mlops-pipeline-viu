@@ -1,0 +1,47 @@
+# ── Secretos / claves ──────────────────────────────────────────────
+*.pem
+*.key
+*.crt
+.env
+.env.*
+!.env.example
+
+# ── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+build/
+dist/
+
+# ── Entornos virtuales ─────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Modelos entrenados (se generan en CI) ──────────────────────────
+models/*.pkl
+models/*.joblib
+models/metrics.json
+
+# ── Terraform ──────────────────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl
+crash.log
+
+# ── Sistema / IDE ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

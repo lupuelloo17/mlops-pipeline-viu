@@ -15,7 +15,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, field_validator
 
-from predict import predict, reload_model
+from src.predict import predict, reload_model
 
 METRICS_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "metrics.json")
 
