@@ -3,8 +3,8 @@
 Pipeline MLOps completo para clasificación de flores Iris, implementado con FastAPI, Docker, GitHub Actions y AWS.
 
 **Asignatura:** Metodologías de Desarrollo y Despliegue de Aplicaciones para Ciencia de Datos  
-**Código:** 20GIAR — Máster en Data Analytics, Universidad Internacional de Valencia  
-**Autor:** Luis [apellido]
+**Código:** 20GIAR — Grado de Ciencia de Datos e Inteligencia Artificial, Universidad Internacional de Valencia  
+**Autor:** Luis C. Puello Fuentes
 
 ---
 
