@@ -1,4 +1,4 @@
-# 🌸 Iris MLOps Pipeline — VIU 20GIAR
+# Iris MLOps Pipeline — VIU 20GIAR
 
 Pipeline MLOps completo para clasificación de flores Iris, implementado con FastAPI, Docker, GitHub Actions y AWS.
 
